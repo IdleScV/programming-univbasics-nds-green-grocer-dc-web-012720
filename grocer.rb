@@ -43,6 +43,7 @@ def apply_coupons(cart, coupons)
     cart_item_with_coupon = find_item_by_name_in_collection(couponed, cart)
     if cart_item && cart_item[:count] >= coupons[counter][:num]
       if cart_item_with_coupon
+        cart)
     
     
     
