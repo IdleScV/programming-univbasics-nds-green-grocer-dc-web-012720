@@ -36,41 +36,9 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  
-  count = 0;
-  runtime = cart.length
-  
-  # iterate through coupons
-  while count < coupons.length do
-    cartcount = 0
-    
-    #! Find item in cart that matches coupon
-    while cartcount < runtime do
-      if coupons[count][:item] == cart[cartcount][:item] 
-        
-        # Finds num of items that isn't on sale
-        a = cart[cartcount][:count]
-        b = coupons[count][:num]
-        leftover = a % b
-       
-        
-        # Adds couponed hash to end of cart
-        cart.push(cart[cartcount])
-        cart[cart.length - 1][:item] = (cart[cartcount][:item] +" W/COUPON")
-        cart[cart.length - 1][:price] = coupons[count][:cost] / coupons[count][:num]
-        cart[cart.length - 1][:count] = a - leftover 
-        
-        # updates original cart with num items that don't apply discount
-        cart[cartcount][:count] = leftover
-        
-      end
-      
-      cartcount += 1
-    end
-    
-    count += 1
-  end
-  return cart
+  counter = 0;
+  while counter < coupons.length
+    cart_items = find_item_by_name_in_collection(coupons[counter])
 end
 
 def apply_clearance(cart)
