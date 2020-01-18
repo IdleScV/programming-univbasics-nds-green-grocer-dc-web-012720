@@ -78,14 +78,14 @@ end
 
 def checkout(cart, coupons)
   
-  cart = consolidate_cart(cart)
-  cart = apply_coupons(cart, coupons)
-  cart = apply_clearance(cart)
+  cart1 = consolidate_cart(cart)
+  cart2 = apply_coupons(cart1, coupons)
+  cart3 = apply_clearance(cart2)
   
   sum = 0
   count = 0
-  while count < cart.length do
-    sum = sum + (cart[:price] * cart[:count])
+  while count < cart3.length do
+    sum = sum + (cart3[:price] * cart3[:count])
     count += 1
   end
   return sum
