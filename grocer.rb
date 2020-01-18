@@ -58,7 +58,7 @@ def apply_coupons(cart, coupons)
         cart.push(cart[cartcount])
         cart[cart.length - 1][:item] = (cart[cartcount][:item] +" W/COUPON")
         cart[cart.length - 1][:price] = coupons[count][:cost] / coupons[count][:num]
-        cart[cart.length - 1][:count] = a - leftover 
+        cart[cart.length - 1][:count] = cart[cartcount][:count] - leftover 
         
         # updates original cart with num items that don't apply discount
         cart[cartcount][:count] = leftover
