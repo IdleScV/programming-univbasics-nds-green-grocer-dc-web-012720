@@ -44,6 +44,9 @@ def apply_coupons(cart, coupons)
     if cart_item && cart_item[:count] >= coupons[counter][:num]
       
     
+    
+    
+    end
   end
   return cart
 end
