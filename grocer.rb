@@ -50,7 +50,7 @@ def apply_coupons(cart, coupons)
           :item => couponed,
           :price => coupons[counter][:cost] / coupons[counter][:num],
           :count => coupons[counter][:num],
-          
+          :clearance => 
         }
     
     
