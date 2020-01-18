@@ -49,9 +49,9 @@ def apply_coupons(cart, coupons)
       if coupons[count][:item] == cart[cartcount][:item] 
         
         # Finds num of items that isn't on sale
-        a = cart[cartcount][:count]
-        b = coupons[count][:num]
-        nosale = a % b
+        cartnum = cart[cartcount][:count]
+        couponnum = coupons[count][:num]
+        nosale = cartnum % couponnum
        
         
         # Adds couponed hash to end of cart
