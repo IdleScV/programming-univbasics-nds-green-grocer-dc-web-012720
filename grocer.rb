@@ -49,7 +49,7 @@ def apply_coupons(cart, coupons)
       if coupons[count][:item] == cart[cartcount][:item] 
         
         # Finds num of items that isn't on sale
-        leftover = cart[cartcount][:count] % coupons[count][:num]
+        leftover = cart[cartcount][:count] - ((cart[cartcount][:count] / coupons[count][:num]).floor * coupons[count][:num])
         
         
        
