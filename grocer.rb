@@ -50,8 +50,8 @@ def apply_coupons(cart, coupons)
         
         # Finds num of items that isn't on sale
         leftover = cart[cartcount][:count] % coupons[count][:num]
-        b = coupons[count][:num]
-        leftover = a % b
+        
+        
        
         
         # Adds couponed hash to end of cart
