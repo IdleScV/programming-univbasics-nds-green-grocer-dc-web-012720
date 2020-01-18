@@ -51,17 +51,17 @@ def apply_coupons(cart, coupons)
         # Finds num of items that isn't on sale
         a = cart[cartcount][:count]
         b = coupons[count][:num]
-        nosale = a % b
+        leftover = a % b
        
         
         # Adds couponed hash to end of cart
         cart.push(cart[cartcount])
         cart[cart.length - 1][:item] = (cart[cartcount][:item] +" W/COUPON")
         cart[cart.length - 1][:price] = coupons[count][:cost] / coupons[count][:num]
-        cart[cart.length - 1][:count] = a - nosale 
+        cart[cart.length - 1][:count] = a - leftover 
         
         # updates original cart with num items that don't apply discount
-        cart[cartcount][:count] = nosale
+        cart[cartcount][:count] = leftover
         
       end
       
