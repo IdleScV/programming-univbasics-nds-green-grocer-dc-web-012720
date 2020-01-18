@@ -88,5 +88,8 @@ def checkout(cart, coupons)
     sum = sum + (new_cart[count][:price] * new_cart[count][:count])
     count += 1
   end
-  return sum
+  if sum >= 100
+    return sum * 0.9
+  else 
+    return sum
 end
